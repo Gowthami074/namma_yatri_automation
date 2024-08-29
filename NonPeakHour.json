@@ -1,0 +1,419 @@
+[
+    {
+        "farePolicyHour": "NonPeak",
+        "perKmRate": {
+            "amount": 34.287454545454544,
+            "currency": "INR"
+        },
+        "perMinuteRate": null,
+        "rateCardItems": [
+            {
+                "price": 0,
+                "priceWithCurrency": {
+                    "amount": 0,
+                    "currency": "INR"
+                },
+                "title": "GOVERNMENT_CHARGE"
+            },
+            {
+                "price": 79200,
+                "priceWithCurrency": {
+                    "amount": 79200,
+                    "currency": "INR"
+                },
+                "title": "NIGHT_SHIFT_START_TIME_IN_SECONDS"
+            },
+            {
+                "price": 18000,
+                "priceWithCurrency": {
+                    "amount": 18000,
+                    "currency": "INR"
+                },
+                "title": "NIGHT_SHIFT_END_TIME_IN_SECONDS"
+            },
+            {
+                "price": 2000,
+                "priceWithCurrency": {
+                    "amount": 2000,
+                    "currency": "INR"
+                },
+                "title": "BASE_DISTANCE"
+            },
+            {
+                "price": 144,
+                "priceWithCurrency": {
+                    "amount": 144,
+                    "currency": "INR"
+                },
+                "title": "BASE_FARE"
+            },
+            {
+                "price": 0,
+                "priceWithCurrency": {
+                    "amount": 0,
+                    "currency": "INR"
+                },
+                "title": "DEAD_KILOMETER_FARE"
+            },
+            {
+                "price": 27,
+                "priceWithCurrency": {
+                    "amount": 27,
+                    "currency": "INR"
+                },
+                "title": "EXTRA_PER_KM_FARE"
+            },
+            {
+                "price": 23,
+                "priceWithCurrency": {
+                    "amount": 23,
+                    "currency": "INR"
+                },
+                "title": "EXTRA_PER_KM_FARE"
+            },
+            {
+                "price": 27,
+                "priceWithCurrency": {
+                    "amount": 27,
+                    "currency": "INR"
+                },
+                "title": "EXTRA_PER_KM_STEP_FARE_2000_8000"
+            },
+            {
+                "price": 23,
+                "priceWithCurrency": {
+                    "amount": 23,
+                    "currency": "INR"
+                },
+                "title": "EXTRA_PER_KM_STEP_FARE_8000_Above"
+            },
+            {
+                "price": 2,
+                "priceWithCurrency": {
+                    "amount": 2,
+                    "currency": "INR"
+                },
+                "title": "WAITING_CHARGE_PER_MIN"
+            },
+            {
+                "price": 2,
+                "priceWithCurrency": {
+                    "amount": 2,
+                    "currency": "INR"
+                },
+                "title": "WAITING_CHARGE_RATE_PER_MIN"
+            },
+            {
+                "price": 3,
+                "priceWithCurrency": {
+                    "amount": 3,
+                    "currency": "INR"
+                },
+                "title": "FREE_WAITING_TIME_IN_MINUTES"
+            },
+            {
+                "price": 1,
+                "priceWithCurrency": {
+                    "amount": 1,
+                    "currency": "INR"
+                },
+                "title": "NIGHT_SHIFT_CHARGE"
+            },
+            {
+                "price": 0,
+                "priceWithCurrency": {
+                    "amount": 0,
+                    "currency": "INR"
+                },
+                "title": "NIGHT_SHIFT_CHARGE_PERCENTAGE"
+            }
+        ],
+        "serviceTierType": "SEDAN",
+        "totalFare": {
+            "amount": 377.162,
+            "currency": "INR"
+        },
+        "tripCategory": {
+            "contents": "OneWayOnDemandDynamicOffer",
+            "tag": "OneWay"
+        }
+    },
+    {
+        "farePolicyHour": "NonPeak",
+        "perKmRate": {
+            "amount": 25.32709090909091,
+            "currency": "INR"
+        },
+        "perMinuteRate": null,
+        "rateCardItems": [
+            {
+                "price": 0,
+                "priceWithCurrency": {
+                    "amount": 0,
+                    "currency": "INR"
+                },
+                "title": "GOVERNMENT_CHARGE"
+            },
+            {
+                "price": 79200,
+                "priceWithCurrency": {
+                    "amount": 79200,
+                    "currency": "INR"
+                },
+                "title": "NIGHT_SHIFT_START_TIME_IN_SECONDS"
+            },
+            {
+                "price": 18000,
+                "priceWithCurrency": {
+                    "amount": 18000,
+                    "currency": "INR"
+                },
+                "title": "NIGHT_SHIFT_END_TIME_IN_SECONDS"
+            },
+            {
+                "price": 2000,
+                "priceWithCurrency": {
+                    "amount": 2000,
+                    "currency": "INR"
+                },
+                "title": "BASE_DISTANCE"
+            },
+            {
+                "price": 100,
+                "priceWithCurrency": {
+                    "amount": 100,
+                    "currency": "INR"
+                },
+                "title": "BASE_FARE"
+            },
+            {
+                "price": 0,
+                "priceWithCurrency": {
+                    "amount": 0,
+                    "currency": "INR"
+                },
+                "title": "DEAD_KILOMETER_FARE"
+            },
+            {
+                "price": 20,
+                "priceWithCurrency": {
+                    "amount": 20,
+                    "currency": "INR"
+                },
+                "title": "EXTRA_PER_KM_FARE"
+            },
+            {
+                "price": 17,
+                "priceWithCurrency": {
+                    "amount": 17,
+                    "currency": "INR"
+                },
+                "title": "EXTRA_PER_KM_FARE"
+            },
+            {
+                "price": 20,
+                "priceWithCurrency": {
+                    "amount": 20,
+                    "currency": "INR"
+                },
+                "title": "EXTRA_PER_KM_STEP_FARE_2000_10000"
+            },
+            {
+                "price": 17,
+                "priceWithCurrency": {
+                    "amount": 17,
+                    "currency": "INR"
+                },
+                "title": "EXTRA_PER_KM_STEP_FARE_10000_Above"
+            },
+            {
+                "price": 2,
+                "priceWithCurrency": {
+                    "amount": 2,
+                    "currency": "INR"
+                },
+                "title": "WAITING_CHARGE_PER_MIN"
+            },
+            {
+                "price": 2,
+                "priceWithCurrency": {
+                    "amount": 2,
+                    "currency": "INR"
+                },
+                "title": "WAITING_CHARGE_RATE_PER_MIN"
+            },
+            {
+                "price": 3,
+                "priceWithCurrency": {
+                    "amount": 3,
+                    "currency": "INR"
+                },
+                "title": "FREE_WAITING_TIME_IN_MINUTES"
+            },
+            {
+                "price": 1,
+                "priceWithCurrency": {
+                    "amount": 1,
+                    "currency": "INR"
+                },
+                "title": "NIGHT_SHIFT_CHARGE"
+            },
+            {
+                "price": 0,
+                "priceWithCurrency": {
+                    "amount": 0,
+                    "currency": "INR"
+                },
+                "title": "NIGHT_SHIFT_CHARGE_PERCENTAGE"
+            }
+        ],
+        "serviceTierType": "TAXI",
+        "totalFare": {
+            "amount": 278.598,
+            "currency": "INR"
+        },
+        "tripCategory": {
+            "contents": "OneWayOnDemandDynamicOffer",
+            "tag": "OneWay"
+        }
+    },
+    {
+        "farePolicyHour": "NonPeak",
+        "perKmRate": {
+            "amount": 28.253272727272726,
+            "currency": "INR"
+        },
+        "perMinuteRate": null,
+        "rateCardItems": [
+            {
+                "price": 0,
+                "priceWithCurrency": {
+                    "amount": 0,
+                    "currency": "INR"
+                },
+                "title": "GOVERNMENT_CHARGE"
+            },
+            {
+                "price": 79200,
+                "priceWithCurrency": {
+                    "amount": 79200,
+                    "currency": "INR"
+                },
+                "title": "NIGHT_SHIFT_START_TIME_IN_SECONDS"
+            },
+            {
+                "price": 18000,
+                "priceWithCurrency": {
+                    "amount": 18000,
+                    "currency": "INR"
+                },
+                "title": "NIGHT_SHIFT_END_TIME_IN_SECONDS"
+            },
+            {
+                "price": 2000,
+                "priceWithCurrency": {
+                    "amount": 2000,
+                    "currency": "INR"
+                },
+                "title": "BASE_DISTANCE"
+            },
+            {
+                "price": 106,
+                "priceWithCurrency": {
+                    "amount": 106,
+                    "currency": "INR"
+                },
+                "title": "BASE_FARE"
+            },
+            {
+                "price": 0,
+                "priceWithCurrency": {
+                    "amount": 0,
+                    "currency": "INR"
+                },
+                "title": "DEAD_KILOMETER_FARE"
+            },
+            {
+                "price": 23,
+                "priceWithCurrency": {
+                    "amount": 23,
+                    "currency": "INR"
+                },
+                "title": "EXTRA_PER_KM_FARE"
+            },
+            {
+                "price": 19,
+                "priceWithCurrency": {
+                    "amount": 19,
+                    "currency": "INR"
+                },
+                "title": "EXTRA_PER_KM_FARE"
+            },
+            {
+                "price": 23,
+                "priceWithCurrency": {
+                    "amount": 23,
+                    "currency": "INR"
+                },
+                "title": "EXTRA_PER_KM_STEP_FARE_2000_10000"
+            },
+            {
+                "price": 19,
+                "priceWithCurrency": {
+                    "amount": 19,
+                    "currency": "INR"
+                },
+                "title": "EXTRA_PER_KM_STEP_FARE_10000_Above"
+            },
+            {
+                "price": 2,
+                "priceWithCurrency": {
+                    "amount": 2,
+                    "currency": "INR"
+                },
+                "title": "WAITING_CHARGE_PER_MIN"
+            },
+            {
+                "price": 2,
+                "priceWithCurrency": {
+                    "amount": 2,
+                    "currency": "INR"
+                },
+                "title": "WAITING_CHARGE_RATE_PER_MIN"
+            },
+            {
+                "price": 3,
+                "priceWithCurrency": {
+                    "amount": 3,
+                    "currency": "INR"
+                },
+                "title": "FREE_WAITING_TIME_IN_MINUTES"
+            },
+            {
+                "price": 1,
+                "priceWithCurrency": {
+                    "amount": 1,
+                    "currency": "INR"
+                },
+                "title": "NIGHT_SHIFT_CHARGE"
+            },
+            {
+                "price": 0,
+                "priceWithCurrency": {
+                    "amount": 0,
+                    "currency": "INR"
+                },
+                "title": "NIGHT_SHIFT_CHARGE_PERCENTAGE"
+            }
+        ],
+        "serviceTierType": "HATCHBACK",
+        "totalFare": {
+            "amount": 310.786,
+            "currency": "INR"
+        },
+        "tripCategory": {
+            "contents": "OneWayOnDemandDynamicOffer",
+            "tag": "OneWay"
+        }
+    }
+]
