@@ -152,6 +152,7 @@ public class InterCity extends BaseClass{
 		System.out.println("InterCity Booking cancelled");
 		Thread.sleep(3000);
 		System.out.println("test git");
+		System.out.println("Test my branch");
 	}
 
 
