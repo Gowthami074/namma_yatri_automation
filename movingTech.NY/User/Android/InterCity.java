@@ -151,6 +151,7 @@ public class InterCity extends BaseClass{
 		driver1.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Confirm Cancellation']")).click();
 		System.out.println("InterCity Booking cancelled");
 		Thread.sleep(3000);
+		System.out.println("test git");
 	}
 
 
