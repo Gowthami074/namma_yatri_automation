@@ -30,7 +30,7 @@ public class BaseClass{
 //			cap.setCapability("udid", "15913008960024W");
 //			cap.setCapability("automationName", "UIAutomator2");
 //			cap.setCapability("newCommandTimeout", 600);
-//			cap.setCapability("app", "/Users/gowthami.allu/Documents/NammaYatriAutomation/movingTech.NY/Resources/app-nyDriver-prod-debug.apk");
+//			cap.setCapability("app", "/Users/gowthami.allu/Documents/NammaYatriAutomation/movingTech.NY/Resources/driver-23-aug-master.apk");
 //			//driver = new AppiumDriver(new URL("http://0.0.0.0:4723"), cap);
 //			driver = new AppiumDriver(new URL("http://0.0.0.0:4723/wd/hub"), cap);
 //			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
@@ -44,7 +44,7 @@ public class BaseClass{
 			cap1.setCapability("udid", "15913008960024W"); 
 			cap1.setCapability("automationName", "UIAutomator2");
 			cap1.setCapability("newCommandTimeout", 600);
-			cap1.setCapability("app", "/Users/gowthami.allu/Documents/NammaYatriAutomation/movingTech.NY/Resources/ny_customer_intercity_july.apk");
+			cap1.setCapability("app", "/Users/gowthami.allu/Documents/NammaYatriAutomation/movingTech.NY/Resources/user-23-aug-master.apk");
 //			driver1 = new AppiumDriver(new URL("http://0.0.0.0:4723"), cap1);
 			driver1 = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), cap1);// appium driver casted to Android driver
 		
