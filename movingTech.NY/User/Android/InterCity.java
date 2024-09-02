@@ -45,7 +45,7 @@ public class InterCity extends BaseClass{
 
 		Thread.sleep(2000);
 		driver1.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Confirm Location']")).click();
-		System.out.println("Ajay age is 59");
+		System.out.println("Ajay age is 99");
 		
 
 	}
