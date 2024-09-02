@@ -78,9 +78,7 @@ public class Rentals extends BaseClass{
 		scroll(additionalCharges);
 		
 		driver1.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Confirm Rental']")).click();
-		System.err.println("Test 1");
-		System.out.println("Test 3");
-		System.out.println("Test 4");
+		
 		
 		
 
