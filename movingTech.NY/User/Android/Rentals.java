@@ -7,8 +7,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 
 import com.google.common.collect.ImmutableMap;
+
+import Main.TestingFlowInputOptions;
 import base.BaseClass;
 import io.appium.java_client.AppiumBy;
+import net.bytebuddy.description.ModifierReviewable.OfAbstraction;
 
 public class Rentals extends BaseClass{
 
@@ -75,6 +78,9 @@ public class Rentals extends BaseClass{
 		scroll(additionalCharges);
 		
 		driver1.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Confirm Rental']")).click();
+		System.err.println("Test 1");
+		System.out.println("Test 3");
+		System.out.println("Test 4");
 		
 		
 
