@@ -75,7 +75,7 @@ public class Rentals extends BaseClass{
 		scroll(additionalCharges);
 		
 		driver1.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Confirm Rental']")).click();
-		System.out.println("SYSOUT");
+		
 		
 
 	}
