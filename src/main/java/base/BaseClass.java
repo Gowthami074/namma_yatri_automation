@@ -29,11 +29,21 @@ public class BaseClass{
 //			//cap.setCapability("udid", "emulator-5554");
 //			cap.setCapability("udid", "15913008960024W");
 //			cap.setCapability("automationName", "UIAutomator2");
+cap.setCapability("unlockKey", "14789");
+cap.setCapability("unlockType", "pattern");
 //			cap.setCapability("newCommandTimeout", 600);
 //			cap.setCapability("app", "/Users/gowthami.allu/Documents/NammaYatriAutomation/movingTech.NY/Resources/driver-23-aug-master.apk");
 //			//driver = new AppiumDriver(new URL("http://0.0.0.0:4723"), cap);
 //			driver = new AppiumDriver(new URL("http://0.0.0.0:4723/wd/hub"), cap);
 //			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+if(((LocksDevice) driver).isDeviceLocked())
+			{
+				((LocksDevice) driver).unlockDevice();			
+			}
+			else
+			{
+				System.out.println("Already ulocked");		
+			}
 //			//logger.info("Driver App Launched Successfully");
 
 			// Launch User App
@@ -43,6 +53,8 @@ public class BaseClass{
 			//		 	cap1.setCapability("udid", "062c68090409");
 			cap1.setCapability("udid", "15913008960024W"); 
 			cap1.setCapability("automationName", "UIAutomator2");
+			cap.setCapability("unlockKey", "14789");
+			cap.setCapability("unlockType", "pattern");
 			cap1.setCapability("newCommandTimeout", 600);
 			cap1.setCapability("app", "/Users/gowthami.allu/Documents/NammaYatriAutomation/movingTech.NY/Resources/user-23-aug-master.apk");
 //			driver1 = new AppiumDriver(new URL("http://0.0.0.0:4723"), cap1);
@@ -52,7 +64,14 @@ public class BaseClass{
 
 
 		
-			
+			if(((LocksDevice) driver).isDeviceLocked())
+			{
+				((LocksDevice) driver).unlockDevice();			
+			}
+			else
+			{
+				System.out.println("Already ulocked");		
+			}
 
 
 
