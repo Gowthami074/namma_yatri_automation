@@ -28,7 +28,9 @@ public class DriverOnboarding extends BaseClass {
 	
 	public void loginFlow() throws InterruptedException {
 		
-		Thread.sleep(15000);
+
+	Thread.sleep(15000);
+ main
 		
 		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Enable Location']")).click();
 		//		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='WHILE USING THE APP']")).click();
