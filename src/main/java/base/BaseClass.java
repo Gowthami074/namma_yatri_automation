@@ -56,7 +56,7 @@ if(((LocksDevice) driver).isDeviceLocked())
 			cap.setCapability("unlockKey", "14789");
 			cap.setCapability("unlockType", "pattern");
 			cap1.setCapability("newCommandTimeout", 600);
-			cap1.setCapability("app", "/Users/gowthami.allu/Documents/NammaYatriAutomation/movingTech.NY/Resources/user-23-aug-master.apk");
+			cap1.setCapability("app", "/Users/gowthami.allu/Documents/NammaYatriAutomation/movingTech.NY/Resources/user-2-sept-master.apk");
 //			driver1 = new AppiumDriver(new URL("http://0.0.0.0:4723"), cap1);
 			driver1 = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), cap1);// appium driver casted to Android driver
 		

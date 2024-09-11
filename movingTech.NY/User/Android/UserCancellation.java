@@ -28,7 +28,7 @@ public class UserCancellation extends BaseClass{
 		driver1.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc = 'Cancel Ride : Button']")).click();
 		Thread.sleep(8000);		
      
-
+;
 	}
 	
 	public static void scroll(WebElement quotesElement) {
