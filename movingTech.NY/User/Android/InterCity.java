@@ -20,7 +20,7 @@ public class InterCity extends BaseClass{
 
 
 		driver1.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Intercity']")).click();
-		driver1.findElement(AppiumBy.xpath("//android.widget.Button[@text='ALLOW']")).click();
+//		driver1.findElement(AppiumBy.xpath("//android.widget.Button[@text='ALLOW']")).click();
 
 
 
