@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-30T17:20:20 IST" name="Default suite" finished-at="2024-08-30T17:22:00 IST" duration-ms="100118">
+  <suite started-at="2024-09-16T17:43:18 IST" name="Default suite" finished-at="2024-09-16T17:43:41 IST" duration-ms="22810">
     <groups>
     </groups>
-    <test started-at="2024-08-30T17:20:20 IST" name="Default test" finished-at="2024-08-30T17:22:00 IST" duration-ms="100118">
+    <test started-at="2024-09-16T17:43:18 IST" name="Default test" finished-at="2024-09-16T17:43:41 IST" duration-ms="22810">
       <class name="TestSuite.Android">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:TestSuite.Android@15bb5034]" started-at="2024-08-30T17:20:20 IST" name="setUp" finished-at="2024-08-30T17:20:42 IST" duration-ms="21983" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:TestSuite.Android@4b741d6d]" started-at="2024-09-16T17:43:18 IST" name="setUp" finished-at="2024-09-16T17:43:41 IST" duration-ms="22331" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="sanityrideFlow()[pri:0, instance:TestSuite.Android@15bb5034]" started-at="2024-08-30T17:20:42 IST" name="sanityrideFlow" finished-at="2024-08-30T17:22:00 IST" duration-ms="77580" status="PASS">
+        <test-method signature="sanityrideFlow()[pri:0, instance:TestSuite.Android@4b741d6d]" started-at="2024-09-16T17:43:41 IST" name="sanityrideFlow" finished-at="2024-09-16T17:43:41 IST" duration-ms="6" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- sanityrideFlow -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestSuite.Android@15bb5034]" started-at="2024-08-30T17:22:00 IST" name="tearDown" finished-at="2024-08-30T17:22:00 IST" duration-ms="531" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestSuite.Android@4b741d6d]" started-at="2024-09-16T17:43:41 IST" name="tearDown" finished-at="2024-09-16T17:43:41 IST" duration-ms="455" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

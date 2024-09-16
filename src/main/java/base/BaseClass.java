@@ -1,9 +1,14 @@
 package base;
 
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
+import io.appium.java_client.LocksDevice;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
@@ -18,25 +23,29 @@ public class BaseClass{
 	protected static AppiumDriver driver1;
 	protected static AndroidDriver androidDriver;
 	public static String rideOTP = null;
+	public static String userDeviceUdid =null;
+	public static String driverVechileVariant;
+	public static List<String> udids;
 
 	@BeforeTest
 	public void setUp() throws MalformedURLException {
 		try {
-
+			udids = getDeviceUDIDs(); 
+			System.out.println("Device1 udid "+udids.get(1));
+			System.out.println("Device2 udid "+udids.get(2));
 			
-//			DesiredCapabilities cap = new DesiredCapabilities();
-//			cap.setCapability("platformName", "Android");
-//			//cap.setCapability("udid", "emulator-5554");
-//			cap.setCapability("udid", "15913008960024W");
-//			cap.setCapability("automationName", "UIAutomator2");
-cap.setCapability("unlockKey", "14789");
-cap.setCapability("unlockType", "pattern");
-//			cap.setCapability("newCommandTimeout", 600);
-//			cap.setCapability("app", "/Users/gowthami.allu/Documents/NammaYatriAutomation/movingTech.NY/Resources/driver-23-aug-master.apk");
-//			//driver = new AppiumDriver(new URL("http://0.0.0.0:4723"), cap);
-//			driver = new AppiumDriver(new URL("http://0.0.0.0:4723/wd/hub"), cap);
-//			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
-if(((LocksDevice) driver).isDeviceLocked())
+			DesiredCapabilities cap = new DesiredCapabilities();
+			cap.setCapability("platformName", "Android");
+			cap.setCapability("udid", udids.get(1));
+			cap.setCapability("automationName", "UIAutomator2");
+            cap.setCapability("unlockKey", "14789");
+            cap.setCapability("unlockType", "pattern");
+			cap.setCapability("newCommandTimeout", 600);
+			cap.setCapability("app", "/Users/gowthami.allu/Documents/NammaYatriAutomation/movingTech.NY/Resources/driver-2-sept-master.apk");
+			//driver = new AppiumDriver(new URL("http://0.0.0.0:4723"), cap);
+			driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), cap);
+			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+            if(((LocksDevice) driver).isDeviceLocked())
 			{
 				((LocksDevice) driver).unlockDevice();			
 			}
@@ -50,11 +59,10 @@ if(((LocksDevice) driver).isDeviceLocked())
 			DesiredCapabilities cap1 = new DesiredCapabilities();
 
 			cap1.setCapability("platformName", "Android");
-			//		 	cap1.setCapability("udid", "062c68090409");
-			cap1.setCapability("udid", "15913008960024W"); 
+			cap1.setCapability("udid", udids.get(2)); 
 			cap1.setCapability("automationName", "UIAutomator2");
-			cap.setCapability("unlockKey", "14789");
-			cap.setCapability("unlockType", "pattern");
+			cap1.setCapability("unlockKey", "14789");
+			cap1.setCapability("unlockType", "pattern");
 			cap1.setCapability("newCommandTimeout", 600);
 			cap1.setCapability("app", "/Users/gowthami.allu/Documents/NammaYatriAutomation/movingTech.NY/Resources/user-2-sept-master.apk");
 //			driver1 = new AppiumDriver(new URL("http://0.0.0.0:4723"), cap1);
@@ -104,9 +112,31 @@ if(((LocksDevice) driver).isDeviceLocked())
 						+ ".scrollIntoView(new UiSelector()" + ".textMatches(\"" + text + "\").instance(0))"));
 	}
 
-
-
-
+	public static List<String> getDeviceUDIDs() {
+		List<String> udids = new ArrayList<>();
+		try {
+			
+			ProcessBuilder processBuilder = new ProcessBuilder("/usr/local/bin/adb", "devices", "-l");   
+			//	        System.out.println(System.getenv("PATH"));
+			Process process = processBuilder.start();
+			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+			String line;
+			while ((line = reader.readLine()) != null) {
+				if (line.contains("device")) {
+					String[] parts = line.split("\\s+");
+					if (parts.length > 0) {
+						udids.add(parts[0]);
+					
+						
+					}
+				} 
+			}
+			process.waitFor();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return udids;
+	}
 	@AfterTest
 	public void tearDown() {
 		if (driver != null) {
