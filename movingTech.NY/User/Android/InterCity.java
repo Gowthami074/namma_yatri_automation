@@ -23,8 +23,8 @@ public class InterCity extends BaseClass{
 //		driver1.findElement(AppiumBy.xpath("//android.widget.Button[@text='ALLOW']")).click();
 
 
-
 		SearchForRideFromSuggestion();
+		
 		roundTrip();
 		reserve();
 
