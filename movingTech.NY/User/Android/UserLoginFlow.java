@@ -7,17 +7,19 @@ import io.appium.java_client.android.AndroidDriver;
 
 import java.time.Duration;
 
+import org.testng.annotations.Test;
+
 import base.BaseClass;
 
 public class UserLoginFlow extends BaseClass{
-	
-	
+
+   @Test
 	public void successfulUserLogin() throws InterruptedException {
-		
+	   
+	    DevicePermission devicePermission = new DevicePermission();
 		driver1.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Get Started']")).click();   
-		Thread.sleep(2000);
-		
-		DevicePermission.autoSuggestionDecline();
+		Thread.sleep(2000);	
+		devicePermission.autoSuggestionDecline();
 		Thread.sleep(1000);
 		driver1.findElement(AppiumBy.xpath("//android.widget.EditText[@text='Enter Mobile number']")).sendKeys("9491839588");
 		Thread.sleep(2000);
@@ -27,14 +29,9 @@ public class UserLoginFlow extends BaseClass{
 		Thread.sleep(3000);
 		driver1.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Allow Location Access']")).click();
 		Thread.sleep(2000); 
-		DevicePermission.locationPermissionsConfirmation();
+		devicePermission.locationPermissionsConfirmation();
+		devicePermission.notification();
 		Thread.sleep(2000);
-		//driver1.findElement(AppiumBy.xpath("//android.widget.Button[@text='Allow']")).click();
-//		driver1.findElement(AppiumBy.xpath("//android.widget.Button[@text='ALLOW']")).click();
-		Thread.sleep(3000);
-		
-	}
-	
-	
 
+	}
 }
