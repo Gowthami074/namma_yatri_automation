@@ -1,73 +1,76 @@
 package Driver;
 
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Point;
 import base.BaseClass;
-import java.time.Duration;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.PointerInput;
-import org.openqa.selenium.interactions.Sequence;
 import io.appium.java_client.AppiumBy;
-import io.appium.java_client.AppiumDriver;
-import com.google.common.collect.ImmutableList;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebElement;
+import org.testng.Assert;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Point;
 
-public class DriverCancellation extends BaseClass{
+import com.google.common.collect.ImmutableMap;
 
-	public void cancelRide() throws InterruptedException {
-		System.out.println("Driver cancel about to start");
-		DriverCancellation.scroll();
-	WebElement homeElement = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Home']"));
-	
-	//Ride Cancellation Action
-	
-	driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Cancel Ride']")).click();
-	
-	Thread.sleep(5000);	
-    
-    driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Continue']")).click();
-	driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Vehicle issue']")).click();
-	driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Cancel Ride']")).click();
-	//Assert that "Home" Element is present after cancellation
-	
-	//Assert.assertTrue(homeElement.isDisplayed(), "Home element is not displayed.");
-	//homeElement.click();
+public class DriverCancellation extends BaseClass {
 
-	
-	}
-	public static void scroll() {
-		System.out.println("Coming scroll");
-		Dimension size = DriverCancellation.driver.manage().window().getSize();
-		Point midpoint = new Point((int)(size.width*0.5),(int)(size.height*0.5));
-		int bottom = midpoint.y + (int)(midpoint.y * 0.75); // can change 0.75 according to need
-		int top = midpoint.y - (int)(midpoint.y * 0.75);   // can change 0.75 according to need
-		Point start = new Point(midpoint.x , bottom);
-		Point end = new Point(midpoint.x,top);
-		swipe(start, end , Duration.ofMillis(300));
-	}
-	public static  void swipe(Point start, Point end, Duration duration) {
-		System.out.println("Coming swipe");
-		PointerInput input = new PointerInput(PointerInput.Kind.TOUCH,"myfinger"); //put finger on screen
-		Sequence swipe = new Sequence(input,1);
-		
-		swipe.addAction(input.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), start.x,start.y));
-		swipe.addAction(input.createPointerDown(PointerInput.MouseButton.LEFT.asArg())); // press left button of mouse
-		
-		swipe.addAction(input.createPointerMove(duration, PointerInput.Origin.viewport(), end.x,end.y));
-		swipe.addAction(input.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));//release left button of mouse
-		((AppiumDriver)DriverCancellation.driver).perform(ImmutableList.of(swipe));
-	}
-//	public void verticalSwipeByPercentages(double startPercentage, double endPercentage, double anchorPercentage) {
-//        Dimension size = driver.manage().window().getSize();
-//        int anchor = (int) (size.width * anchorPercentage);
-//        int startPoint = (int) (size.height * startPercentage);
-//        int endPoint = (int) (size.height * endPercentage);
-//        new TouchAction<AppiumDriver>(driver)
-//            .press(PointOption.point(anchor, startPoint))
-//            .waitAction(WaitOptions.waitOptions(Duration.ofMillis(1000)))
-//            .moveTo(PointOption.point(anchor, endPoint))
-//            .release()
-//            .perform();
-//    }
-	
+    public void cancelRide() throws InterruptedException {
+        System.out.println("Driver cancel about to start");
+        
+        
+        
+        WebElement scrollableElement = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Ride Fare']"));
+        
+        scroll(scrollableElement);
 
+        // Ride Cancellation Action
+        WebElement cancelRideButton = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Cancel Ride']"));
+        cancelRideButton.click();
+
+        Thread.sleep(5000);
+
+        WebElement continueButton = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Continue']"));
+        continueButton.click();
+        
+        Thread.sleep(2000);
+
+        WebElement vehicleIssueOption = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Vehicle issue']"));
+        vehicleIssueOption.click();
+        
+        Thread.sleep(2000);
+
+        WebElement confirmCancelButton = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Cancel Ride : Button\"]"));
+        confirmCancelButton.click();
+        
+        WebElement homeButton = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Home']"));
+        Assert.assertTrue(homeButton.isDisplayed(), "Home button is not displayed.");
+        homeButton.click();
+        
+        // Print confirmation message
+        System.out.println("Ride is cancelled and driver is navigated to Home Screen");
+    }
+
+    public static void scroll(WebElement element) {
+       
+    	// Get the screen size
+        Dimension screenSize = driver.manage().window().getSize();
+        int screenHeight = screenSize.getHeight();
+        int screenWidth = screenSize.getWidth();
+        System.out.println(screenHeight);
+        System.out.println(screenWidth);
+        // Calculate the y-coordinate for 50% of the screen height
+        int scrollToY = screenHeight / 2;
+        System.out.println(scrollToY);
+
+        // Get the element's location
+        Point elementLocation = element.getLocation();
+        int elementX = elementLocation.getX();
+        int elementY = elementLocation.getY();
+
+        // Perform the scroll action using JavaScript
+        ((JavascriptExecutor) driver).executeScript("mobile: dragGesture", ImmutableMap.of(
+                "elementId", ((RemoteWebElement) element).getId(),
+                "endX", elementX,
+                "endY", scrollToY
+        ));
+    }
 }
