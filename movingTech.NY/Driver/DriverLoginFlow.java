@@ -26,11 +26,15 @@ public class DriverLoginFlow extends BaseClass{
 		case "R9ZTB0KD0FA":
 		case "RFCT42T5N9D":
 		case "28301JEGR03129":
+		case "RZ8R72RE6AB":
+		case "8cb2f113":
+		case "SONJFMDUKV65OJV4":
 			driver.findElement(AppiumBy.xpath("//android.widget.Button[@text='While using the app']")).click();
 			break;
 		case "1377682723004YR":
 		case "1371785921000CT":
 		case "15913008960024W":
+		case "9618349153000CS":
 			driver.findElement(AppiumBy.xpath("//android.widget.Button[@text='WHILE USING THE APP']")).click();
 			break;
 		
