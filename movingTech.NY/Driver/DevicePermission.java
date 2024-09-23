@@ -16,18 +16,21 @@ public class DevicePermission extends BaseClass {
 		Thread.sleep(2000);
 		drawOverApplicationsFlow();
 		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Autostart in background']")).click();
-		Thread.sleep(2000);
-		 
-		if (driverUdid.equals("15913008960024W")) {
-			driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='ALLOW']")).click();
-			Thread.sleep(2000);
-		}
+		Thread.sleep(2000);	
 		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Battery Optimization']")).click();
 		Thread.sleep(1000);
 		batteryOptimizationPopUp();
-		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Notification Access']")).click();
-		Thread.sleep(1000);
-		notificationAccessPopUp();
+		switch(driverUdid) {
+	    case "8cb2f113":
+	    case "SONJFMDUKV65OJV4":
+	    case "1377682723004YR":
+	    case "RZ8R72RE6AB":
+	        break;
+	    default:
+	        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Notification Access']")).click();
+	        Thread.sleep(1000);
+	        notificationAccessPopUp();
+	}
 		System.out.println("Permissions are setted Up successfully");
 		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Continue']")).click();
 	}
@@ -60,6 +63,7 @@ public class DevicePermission extends BaseClass {
 		case "1371785921000CT":
 		case "1377682723004YR":
 		case "15913008960024W":
+		case "9618349153000CS":
 			driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc='Search']")).click();
 			Thread.sleep(2000);
 			driver.findElement(AppiumBy.xpath("//android.widget.AutoCompleteTextView[@text='Search']")).sendKeys("Namma");
@@ -73,6 +77,9 @@ public class DevicePermission extends BaseClass {
 			break;
 		case "RZ8N91FWYXT":
 		case "RFCT42T5N9D":
+		case "RZ8R72RE6AB":
+		case "8cb2f113":
+//		case "SONJFMDUKV65OJV4":
 			driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Namma Yatri Partner']")).click();
 			Thread.sleep(4000);
 			driver.findElement(AppiumBy.xpath("//android.widget.ImageButton[@content-desc='Navigate up']")).click();
@@ -88,10 +95,15 @@ public class DevicePermission extends BaseClass {
 		case "1371785921000CT":
 		case "1377682723004YR":
 		case "15913008960024W": 
+		case "9618349153000CS":
+		case "8cb2f113":
+		case "SONJFMDUKV65OJV4":
 			driver.findElement(AppiumBy.xpath("//android.widget.Button[@text='ALLOW']")).click();
 			break;
 		case "RZ8N91FWYXT":
 		case "RFCT42T5N9D":
+		case "R9ZTB0KD0FA":
+		case "RZ8R72RE6AB":
 			driver.findElement(AppiumBy.xpath("//android.widget.Button[@text='Allow']")).click();
 			break;
 		default:
@@ -104,10 +116,12 @@ public class DevicePermission extends BaseClass {
 		case "1371785921000CT":
 		case "1377682723004YR":
 		case "15913008960024W": 
+		case "9618349153000CS":
 			driver.findElement(AppiumBy.xpath("//android.widget.Button[@text='ALLOW']")).click();
 			break;
 		case "RZ8N91FWYXT":
 		case "RFCT42T5N9D":
+		case "R9ZTB0KD0FA":
 			driver.findElement(AppiumBy.xpath("//android.widget.Button[@text='Allow']")).click();
 			break;
 		default:
