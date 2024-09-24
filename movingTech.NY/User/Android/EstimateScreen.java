@@ -14,11 +14,12 @@ import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 import org.openqa.selenium.interactions.Sequence;
+import org.testng.annotations.Test;
 
 public class EstimateScreen extends BaseClass {
 
 	
-
+		@Test
 		public void autoAssignDriver() throws InterruptedException {
 		    Thread.sleep(7000);
 		    System.out.println("Getting in for estimate");

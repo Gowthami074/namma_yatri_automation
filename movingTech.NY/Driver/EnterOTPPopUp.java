@@ -3,6 +3,7 @@ package Driver;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
+import org.testng.annotations.Test;
 
 import com.google.common.collect.ImmutableMap;
 
@@ -13,7 +14,7 @@ import io.appium.java_client.AppiumBy;
 public class EnterOTPPopUp extends BaseClass {
 	
 	//try for right/wrong otp and various edge cases
-	
+	@Test
 	public void enterCorrectOTP() throws InterruptedException {
 		
 		System.out.println("Ride OTP is transferred to Driver to Start Ride = "+rideOTP);

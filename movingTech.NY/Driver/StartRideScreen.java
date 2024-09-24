@@ -5,12 +5,13 @@ import base.BaseClass;
 import org.openqa.selenium.WebElement;
 import java.util.concurrent.TimeUnit;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 public class StartRideScreen extends BaseClass {
     
     //can write about start or cancel ride
     //also messaging, calling, opening maps, click I've arrived
-    
+	@Test
     public void startRide() throws InterruptedException {
         // Set Implicit Wait
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

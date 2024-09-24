@@ -1,10 +1,12 @@
 package User.Android;
 
+import org.testng.annotations.Test;
+
 import base.BaseClass;
 import io.appium.java_client.AppiumBy;
 
 public class RideSearch extends BaseClass{
-	
+    @Test	
 	public void SearchForRideFromSuggestion() throws InterruptedException {
 		System.out.println("Ride Search about to start");
 		Thread.sleep(3000);
