@@ -4,6 +4,8 @@ import base.BaseClass;
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
+import org.testng.annotations.Test;
+
 import com.google.common.collect.ImmutableMap;
 
 import org.openqa.selenium.Dimension;
@@ -13,7 +15,7 @@ import org.openqa.selenium.Point;
 public class UserCancellation extends BaseClass{
 
 
-
+    @Test
 	public void userCancellation() throws InterruptedException {
 		
 		System.out.println("Entered into cancellation class");
