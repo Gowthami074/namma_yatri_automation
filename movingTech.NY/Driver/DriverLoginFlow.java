@@ -37,19 +37,21 @@ public class DriverLoginFlow extends BaseClass{
 		case "9618349153000CS":
 			driver.findElement(AppiumBy.xpath("//android.widget.Button[@text='WHILE USING THE APP']")).click();
 			break;
-		
+		case "062c68090409":
+			driver.findElement(AppiumBy.xpath("//android.widget.Button[@text='ALLOW ONLY WHILE USING THE APP']")).click();
+			break;
 		default:
 			throw new NoSuchElementException("Invalid Selectors");
 
 		}
   
-		Thread.sleep(4000);
+		Thread.sleep(5000);
 		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Confirm']")).click();
 		Thread.sleep(2000);
 		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Get Started']")).click();
 		Thread.sleep(2000);
 		System.out.println("Entering Mobile Number");
-		driver.findElement(AppiumBy.xpath("//android.widget.EditText[@text='10-digit mobile number']")).sendKeys("9876544445"); 
+		driver.findElement(AppiumBy.xpath("//android.widget.EditText[@text='10-digit mobile number']")).sendKeys("6337860001"); 
 		Thread.sleep(2000);
 		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Continue']")).click();
 		Thread.sleep(2000);
@@ -59,10 +61,10 @@ public class DriverLoginFlow extends BaseClass{
 		DevicePermission devicePermissions = new DevicePermission();
 		devicePermissions.handlePermissions();
 		
-		driver.findElements(AppiumBy.xpath("//android.widget.TextView[@text='Maybe Later']"));
-		driver.findElements(AppiumBy.xpath("//android.widget.TextView[@text='GO!']"));
+//		driver.findElements(AppiumBy.xpath("//android.widget.TextView[@text='Maybe Later']"));
+//		driver.findElements(AppiumBy.xpath("//android.widget.TextView[@text='GO!']"));
 		
-//		pointsAndUpiPopsHandling();
+		pointsAndUpiPopsHandling();
 //		driverModeValidation();		
 	}
 	
@@ -77,7 +79,7 @@ public class DriverLoginFlow extends BaseClass{
 				System.out.println("Skipping Points Overlay");
 				elements4.get(0).click();
 			}
-		}
+		} 
 		else {
 			System.out.println("No overlay found after login");
 
@@ -103,7 +105,7 @@ public class DriverLoginFlow extends BaseClass{
 			}
 
 		}
-
+ 
 	}
 	
 	

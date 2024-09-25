@@ -30,8 +30,7 @@ public class UserLoginFlow extends BaseClass{
 		driver1.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Allow Location Access']")).click();
 		Thread.sleep(2000); 
 		devicePermission.locationPermissionsConfirmation();
-		devicePermission.notification();
+//		devicePermission.notification();
 		Thread.sleep(2000);
-
 	}
 }

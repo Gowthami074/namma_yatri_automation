@@ -25,7 +25,7 @@ public class BaseClass {
 	public int flowOption;
 	public static List<String> udids;
 	protected static String driverUdid, userUdid;
-
+ 
 	@BeforeSuite
 	@Parameters("flowOption")
 	public void setUp(int flowOption) throws MalformedURLException {
@@ -62,7 +62,7 @@ public class BaseClass {
 				cap.setCapability("udid", driverUdid);
 				cap.setCapability("automationName", "UiAutomator2");
 				cap.setCapability("newCommandTimeout", 300);
-				cap.setCapability("app", "/Users/sumedh.kp/eclipse-workspace/NammaYatriAutomation/movingTech.NY/Resources/app-nyDriver-prod-debug.apk");
+				cap.setCapability("app", "/Users/gowthami.allu/Documents/NammaYatriAutomation/movingTech.NY/Resources/driver-2-sept-master.apk");
 				driver = new AndroidDriver(url, cap);
 
 				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
@@ -78,7 +78,7 @@ public class BaseClass {
 				cap1.setCapability("udid", userUdid);
 				cap1.setCapability("automationName", "UiAutomator2");
 				cap1.setCapability("newCommandTimeout", 300);
-				cap1.setCapability("app", "/Users/sumedh.kp/Downloads/app-nyUser-prod-debug (1).apk");
+				cap1.setCapability("app", "/Users/gowthami.allu/Documents/NammaYatriAutomation/movingTech.NY/Resources/user-2-sept-master.apk");
 				driver1 = new AppiumDriver(url, cap1);
 				driver1.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 				System.out.println("Launched the User Application");
@@ -95,7 +95,7 @@ public class BaseClass {
 		List<String> udids = new ArrayList<>();
 		try {
 
-			ProcessBuilder processBuilder = new ProcessBuilder("/Users/sumedh.kp/Library/Android/sdk/platform-tools/adb", "devices", "-l");   
+			ProcessBuilder processBuilder = new ProcessBuilder("/usr/local/bin/adb", "devices", "-l");   
 			//          System.out.println(System.getenv("PATH"));
 			Process process = processBuilder.start();
 			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));

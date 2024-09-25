@@ -1,25 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="6" total="18" passed="12" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-09-16T17:43:18 IST" name="Default suite" finished-at="2024-09-16T17:43:41 IST" duration-ms="22810">
+  <suite started-at="2024-09-25T17:30:53 IST" name="Normal Ride Flow" finished-at="2024-09-25T17:35:38 IST" duration-ms="285898">
     <groups>
     </groups>
-    <test started-at="2024-09-16T17:43:18 IST" name="Default test" finished-at="2024-09-16T17:43:41 IST" duration-ms="22810">
-      <class name="TestSuite.Android">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:TestSuite.Android@4b741d6d]" started-at="2024-09-16T17:43:18 IST" name="setUp" finished-at="2024-09-16T17:43:41 IST" duration-ms="22331" status="PASS">
+    <test started-at="2024-09-25T17:30:53 IST" name="DriverLogin" finished-at="2024-09-25T17:31:39 IST" duration-ms="46436">
+      <class name="Driver.DriverLoginFlow">
+        <test-method signature="successfulDriverLogin()[pri:0, instance:Driver.DriverLoginFlow@793f29ff]" started-at="2024-09-25T17:30:53 IST" name="successfulDriverLogin" finished-at="2024-09-25T17:31:39 IST" duration-ms="46420" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- successfulDriverLogin -->
+      </class> <!-- Driver.DriverLoginFlow -->
+    </test> <!-- DriverLogin -->
+    <test started-at="2024-09-25T17:31:44 IST" name="UserLogin" finished-at="2024-09-25T17:32:10 IST" duration-ms="25442">
+      <class name="User.Android.UserLoginFlow">
+        <test-method signature="successfulUserLogin()[pri:0, instance:User.Android.UserLoginFlow@16eb3ea3]" started-at="2024-09-25T17:31:44 IST" name="successfulUserLogin" finished-at="2024-09-25T17:32:10 IST" duration-ms="25440" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- successfulUserLogin -->
+      </class> <!-- User.Android.UserLoginFlow -->
+    </test> <!-- UserLogin -->
+    <test started-at="2024-09-25T17:32:15 IST" name="RideSearch and Getting Estimates" finished-at="2024-09-25T17:33:08 IST" duration-ms="53180">
+      <class name="User.Android.RideSearch">
+        <test-method signature="SearchForRideFromSuggestion()[pri:0, instance:User.Android.RideSearch@1caa0244]" started-at="2024-09-25T17:32:15 IST" name="SearchForRideFromSuggestion" finished-at="2024-09-25T17:32:38 IST" duration-ms="23446" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SearchForRideFromSuggestion -->
+      </class> <!-- User.Android.RideSearch -->
+      <class name="User.Android.EstimateScreen">
+        <test-method signature="autoAssignDriver()[pri:0, instance:User.Android.EstimateScreen@7ce026d3]" started-at="2024-09-25T17:32:38 IST" name="autoAssignDriver" finished-at="2024-09-25T17:33:08 IST" duration-ms="29728" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- autoAssignDriver -->
+      </class> <!-- User.Android.EstimateScreen -->
+    </test> <!-- RideSearch and Getting Estimates -->
+    <test started-at="2024-09-25T17:33:13 IST" name="Accepting the RideRequest" finished-at="2024-09-25T17:33:24 IST" duration-ms="10842">
+      <class name="Driver.PopUpScreen">
+        <test-method signature="acceptOffer()[pri:0, instance:Driver.PopUpScreen@24569dba]" started-at="2024-09-25T17:33:13 IST" name="acceptOffer" finished-at="2024-09-25T17:33:24 IST" duration-ms="10840" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- acceptOffer -->
+      </class> <!-- Driver.PopUpScreen -->
+    </test> <!-- Accepting the RideRequest -->
+    <test started-at="2024-09-25T17:33:29 IST" name="Reading OTP from OTP screen" finished-at="2024-09-25T17:34:02 IST" duration-ms="33021">
+      <class name="User.Android.OTPScreen">
+        <test-method signature="readOTP()[pri:0, instance:User.Android.OTPScreen@76494737]" started-at="2024-09-25T17:33:29 IST" name="readOTP" finished-at="2024-09-25T17:34:02 IST" duration-ms="33019" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- readOTP -->
+      </class> <!-- User.Android.OTPScreen -->
+    </test> <!-- Reading OTP from OTP screen -->
+    <test started-at="2024-09-25T17:34:07 IST" name="Starting the Ride" finished-at="2024-09-25T17:34:52 IST" duration-ms="45212">
+      <class name="Driver.StartRideScreen">
+        <test-method signature="startRide()[pri:0, instance:Driver.StartRideScreen@61c4eee0]" started-at="2024-09-25T17:34:07 IST" name="startRide" finished-at="2024-09-25T17:34:16 IST" duration-ms="8998" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startRide -->
+      </class> <!-- Driver.StartRideScreen -->
+      <class name="Driver.EnterOTPPopUp">
+        <test-method signature="enterCorrectOTP()[pri:0, instance:Driver.EnterOTPPopUp@548a24a]" started-at="2024-09-25T17:34:16 IST" name="enterCorrectOTP" finished-at="2024-09-25T17:34:23 IST" duration-ms="6936" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enterCorrectOTP -->
+      </class> <!-- Driver.EnterOTPPopUp -->
+      <class name="Driver.AndroidBackButton">
+        <test-method signature="tapBack()[pri:0, instance:Driver.AndroidBackButton@433defed]" started-at="2024-09-25T17:34:23 IST" name="tapBack" finished-at="2024-09-25T17:34:52 IST" duration-ms="29273" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tapBack -->
+      </class> <!-- Driver.AndroidBackButton -->
+    </test> <!-- Starting the Ride -->
+    <test started-at="2024-09-25T17:34:57 IST" name="Ending the Ride" finished-at="2024-09-25T17:35:13 IST" duration-ms="16668">
+      <class name="Driver.EndRideScreen">
+        <test-method signature="clickEndRide()[pri:0, instance:Driver.EndRideScreen@45d84a20]" started-at="2024-09-25T17:34:57 IST" name="clickEndRide" finished-at="2024-09-25T17:35:13 IST" duration-ms="16665" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickEndRide -->
+      </class> <!-- Driver.EndRideScreen -->
+    </test> <!-- Ending the Ride -->
+    <test started-at="2024-09-25T17:35:18 IST" name="User Giving Rating" finished-at="2024-09-25T17:35:30 IST" duration-ms="11609">
+      <class name="User.Android.UserRatingScreen">
+        <test-method signature="ratingScreen()[pri:0, instance:User.Android.UserRatingScreen@536f2a7e]" started-at="2024-09-25T17:35:18 IST" name="ratingScreen" finished-at="2024-09-25T17:35:30 IST" duration-ms="11607" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ratingScreen -->
+      </class> <!-- User.Android.UserRatingScreen -->
+    </test> <!-- User Giving Rating -->
+    <test started-at="2024-09-25T17:35:35 IST" name="Driver Giving Rating" finished-at="2024-09-25T17:35:38 IST" duration-ms="3396">
+      <class name="Driver.DriverRatingScreen">
+        <test-method is-config="true" signature="setUp(int)[pri:0, instance:Driver.DriverRatingScreen@6c4906d3]" started-at="2024-09-25T17:30:10 IST" name="setUp" finished-at="2024-09-25T17:30:53 IST" duration-ms="42959" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="sanityrideFlow()[pri:0, instance:TestSuite.Android@4b741d6d]" started-at="2024-09-16T17:43:41 IST" name="sanityrideFlow" finished-at="2024-09-16T17:43:41 IST" duration-ms="6" status="PASS">
+        <test-method signature="ratingScreen()[pri:0, instance:Driver.DriverRatingScreen@6c4906d3]" started-at="2024-09-25T17:35:35 IST" name="ratingScreen" finished-at="2024-09-25T17:35:38 IST" duration-ms="3395" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- sanityrideFlow -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestSuite.Android@4b741d6d]" started-at="2024-09-16T17:43:41 IST" name="tearDown" finished-at="2024-09-16T17:43:41 IST" duration-ms="455" status="PASS">
+        </test-method> <!-- ratingScreen -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Driver.DriverRatingScreen@6c4906d3]" started-at="2024-09-25T17:35:38 IST" name="tearDown" finished-at="2024-09-25T17:35:40 IST" duration-ms="1305" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- TestSuite.Android -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- Driver.DriverRatingScreen -->
+    </test> <!-- Driver Giving Rating -->
+  </suite> <!-- Normal Ride Flow -->
 </testng-results>

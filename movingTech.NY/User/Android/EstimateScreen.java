@@ -32,6 +32,7 @@ public class EstimateScreen extends BaseClass {
 		        System.out.println("'Book Any' option found. Proceeding...");
 		        Thread.sleep(2000); // Handle UI transition delay
 		        selectVehicleVariant();
+		    	driver1.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Book Any']")).click();
 		        tapFinalXpath();  // Tap final element after vehicle selection
 		    }
 
@@ -63,6 +64,7 @@ public class EstimateScreen extends BaseClass {
 		private void tapFinalXpath() {
 		    // Tapping on the final XPath element
 		    try {
+		    
 		        driver1.findElement(AppiumBy.xpath("//android.widget.LinearLayout[@content-desc='Back : Button']/../../../android.widget.LinearLayout[2]/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout[2]")).click();
 		        System.out.println("Tapped on the final element.");
 		    } catch (NoSuchElementException e) {

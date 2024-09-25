@@ -17,7 +17,7 @@ import base.BaseClass;
 public class OTPScreen extends BaseClass {
 	
 	//about chat or messaging feature 
-	// also about cancel ride
+	// also about cancel ride 
 	// write about all possible ways like contct customer /sos
 	
 	

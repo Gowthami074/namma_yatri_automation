@@ -1,11 +1,15 @@
 package Driver;
 
 import java.util.Arrays;
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
 
 import base.BaseClass;
 import io.appium.java_client.AppiumBy;
 
 public class DevicePermission extends BaseClass {
+	public String driverApp = "Namma Yatri Partner";
  
 	
     public void handlePermissions() throws InterruptedException {
@@ -16,7 +20,8 @@ public class DevicePermission extends BaseClass {
 		Thread.sleep(2000);
 		drawOverApplicationsFlow();
 		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Autostart in background']")).click();
-		Thread.sleep(2000);	
+		Thread.sleep(2000);	 
+		autoStartPermission();
 		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Battery Optimization']")).click();
 		Thread.sleep(1000);
 		batteryOptimizationPopUp();
@@ -25,6 +30,7 @@ public class DevicePermission extends BaseClass {
 	    case "SONJFMDUKV65OJV4":
 	    case "1377682723004YR":
 	    case "RZ8R72RE6AB":
+	    case "062c68090409":
 	        break;
 	    default:
 	        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Notification Access']")).click();
@@ -68,8 +74,20 @@ public class DevicePermission extends BaseClass {
 			driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc='Search']")).click();
 			Thread.sleep(2000);
 			driver.findElement(AppiumBy.xpath("//android.widget.AutoCompleteTextView[@text='Search']")).sendKeys("Namma");
+			
+			List<WebElement> appName = driver.findElements(AppiumBy.xpath("//android.widget.TextView[@text='Namma Yatri Partner']"));
+
+			if(!appName.isEmpty() && appName.get(0).isDisplayed()) {
+				System.out.println("App name displyed");
+				appName.get(0).click();
+				}
+			else {
+				driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='in.juspay.nammayatripartner.debug']")).click();
+				System.out.println("App ackage name displyed");
+			}
+			
 			Thread.sleep(3000);
-			driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Namma Yatri Partner']")).click();
+			
 			Thread.sleep(2000);
 			driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Allow display over other apps\"]")).click();
 			Thread.sleep(2000);
@@ -80,6 +98,8 @@ public class DevicePermission extends BaseClass {
 		case "RFCT42T5N9D":
 		case "RZ8R72RE6AB":
 		case "8cb2f113":
+		
+//		case "SONJFMDUKV65OJV4":
 			driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Namma Yatri Partner']")).click();
 			Thread.sleep(4000);
 			driver.findElement(AppiumBy.xpath("//android.widget.ImageButton[@content-desc='Navigate up']")).click();
@@ -92,6 +112,11 @@ public class DevicePermission extends BaseClass {
 			Thread.sleep(1000);
 			driver.findElement(AppiumBy.xpath("//android.widget.ImageButton[@content-desc='Navigate up']")).click();
 			Thread.sleep(1000);
+			break;
+		case "062c68090409":
+			driver.findElement(AppiumBy.xpath("//android.widget.CheckBox[@resource-id='android:id/checkbox']")).click();
+			Thread.sleep(2000);
+			driver.findElement(AppiumBy.xpath("//android.widget.ImageView[@content-desc='Back']")).click();
 			break;
 		default: 
 			break;
@@ -106,6 +131,7 @@ public class DevicePermission extends BaseClass {
 		case "9618349153000CS":
 		case "8cb2f113":
 		case "SONJFMDUKV65OJV4":
+		case "062c68090409":
 			driver.findElement(AppiumBy.xpath("//android.widget.Button[@text='ALLOW']")).click();
 			break;
 		case "RZ8N91FWYXT":
@@ -138,5 +164,18 @@ public class DevicePermission extends BaseClass {
 		    break;
 			
 		}
+	}
+	private void autoStartPermission() {
+		if ("062c68090409".contains(driverUdid)) {
+
+			driver.findElement(new AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0))"
+					+ ".scrollIntoView(new UiSelector()" + ".textMatches(\"" +driverApp+ "\").instance(0))"));
+			driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Namma Yatri Partner']/../../android.widget.CheckBox")).click();
+			driver.findElement(AppiumBy.xpath("//android.widget.FrameLayout[@content-desc=\"Back\"]/android.widget.ImageView")).click();
+		}
+		else {
+			System.out.println("No action required.");
+		}
+		
 	}
 }
