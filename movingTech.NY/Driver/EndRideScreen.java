@@ -11,17 +11,17 @@ public class EndRideScreen extends BaseClass {
 	public void clickEndRide() throws InterruptedException {
 		System.out.println("Coming to tap on the EndRide");
 		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='End Ride']")).click();
-		System.out.println("Waiting to tap on the Endride in the pop yup");
+		System.out.println("Waiting to tap on the Endride in the pop up");
 		Thread.sleep(3000);
-		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"End Ride : Button\"]")).click();
+		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc='End Ride : Button']")).click();
 		Thread.sleep(3000);
-		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Fare Collected\"]")).click();
+		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Fare Collected']")).click();
 		Thread.sleep(2000);
 	}
 	
-	public void clickMaps() {
+	public void clickMaps() { 
 		
-		
+ 		
 	}
 	
 	public void verifyRideFareAndRideDistance() {

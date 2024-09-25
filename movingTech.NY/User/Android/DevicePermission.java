@@ -22,7 +22,7 @@ public class DevicePermission extends BaseClass {
 		} else {
 			System.out.println("No action required for this Udid: " + userUdid);
 		}
-	}
+	} 
 
 	public void locationPermissionsConfirmation() {
 
@@ -37,6 +37,11 @@ public class DevicePermission extends BaseClass {
 			driver1.findElement(AppiumBy.xpath("//android.widget.Button[@text='While using the app']")).click();
 
 		}
+		else if("062c68090409".contains(userUdid)) {
+
+			driver1.findElement(AppiumBy.xpath("//android.widget.Button[@text='ALLOW ONLY WHILE USING THE APP']")).click();
+		}
+
 		else {
 			System.out.println("No action required for this Udid: " + userUdid);
 		}
