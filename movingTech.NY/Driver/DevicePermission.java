@@ -1,5 +1,6 @@
 package Driver;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -10,13 +11,12 @@ import io.appium.java_client.AppiumBy;
 
 public class DevicePermission extends BaseClass {
 	public String driverApp = "Namma Yatri Partner";
- 
-	
-    public void handlePermissions() throws InterruptedException {
+
+
+	public void handlePermissions() throws InterruptedException {
 		System.out.println("Setting Up the permissions");
 		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Draw over applications']")).click();
 		System.out.println("Draw Over Applications permission");
-		System.out.println(driverUdid);
 		Thread.sleep(2000);
 		drawOverApplicationsFlow();
 		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Autostart in background']")).click();
@@ -26,22 +26,31 @@ public class DevicePermission extends BaseClass {
 		Thread.sleep(1000);
 		batteryOptimizationPopUp();
 		switch(driverUdid) {
-	    case "8cb2f113":
-	    case "SONJFMDUKV65OJV4":
-	    case "1377682723004YR":
-	    case "RZ8R72RE6AB":
-	    case "062c68090409":
-	        break;
-	    default:
-	        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Notification Access']")).click();
-	        Thread.sleep(1000);
-	        notificationAccessPopUp();
-	}
+		case "8cb2f113":
+		case "SONJFMDUKV65OJV4":
+		case "1377682723004YR":
+		case "RZ8R72RE6AB":
+		case "062c68090409":
+		case "eb23ba":
+			break;
+		default:
+			driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Notification Access']")).click();
+			Thread.sleep(1000);
+			notificationAccessPopUp();
+		}
 		System.out.println("Permissions are setted Up successfully");
 		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Continue']")).click();
+		Thread.sleep(2000);
+		if("28301JEGR03129".contains(driverUdid))
+		{
+		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Enable Permission']")).click();
+		driver.findElement(AppiumBy.xpath("//android.widget.RadioButton[@text='Allow all the time']")).click();
+		driver.findElement(AppiumBy.xpath("//android.widget.ImageButton[@content-desc='Navigate up']")).click();
+		
+		}
 	}
-	
-	
+
+
 	private void permissionForSamsungGalaxyA03Core() throws InterruptedException {
 
 		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Grant Permissions']")).click();
@@ -61,45 +70,53 @@ public class DevicePermission extends BaseClass {
 		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='GO!']")).click();
 		Thread.sleep(2000);
 	}
-	
+  
 
-	
+
 	private void drawOverApplicationsFlow() throws InterruptedException {
 		switch(driverUdid) {
 		case "1371785921000CT":
 		case "1377682723004YR":
 		case "15913008960024W":
 		case "9618349153000CS":
-		case "28301JEGR03129" :
 			driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc='Search']")).click();
 			Thread.sleep(2000);
 			driver.findElement(AppiumBy.xpath("//android.widget.AutoCompleteTextView[@text='Search']")).sendKeys("Namma");
-			
+
 			List<WebElement> appName = driver.findElements(AppiumBy.xpath("//android.widget.TextView[@text='Namma Yatri Partner']"));
 
 			if(!appName.isEmpty() && appName.get(0).isDisplayed()) {
 				System.out.println("App name displyed");
 				appName.get(0).click();
-				}
+			}
 			else {
 				driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='in.juspay.nammayatripartner.debug']")).click();
 				System.out.println("App ackage name displyed");
 			}
-			
+
 			Thread.sleep(3000);
-			
+
 			Thread.sleep(2000);
 			driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Allow display over other apps\"]")).click();
 			Thread.sleep(2000);
 			driver.findElement(AppiumBy.xpath("//android.widget.ImageButton[@content-desc=\"Back\"]")).click();
 			Thread.sleep(2000);
 			break;
-		case "RZ8N91FWYXT":
+		case "28301JEGR03129":
+			driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc='Search']")).click();
+			driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Search…']/..")).sendKeys("Namma");
+			driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Namma Yatri Partner']")).click();
+			driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Allow display over other apps']/../android.view.View")).click();
+			driver.findElement(AppiumBy.xpath("//android.widget.Button")).click();
+			driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc='Collapse']")).click();
+			driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc='Navigate up']")).click();
+			break;
+		case "RZ8N91FWYXT": 
 		case "RFCT42T5N9D":
 		case "RZ8R72RE6AB":
 		case "8cb2f113":
-		
-//		case "SONJFMDUKV65OJV4":
+
+			//		case "SONJFMDUKV65OJV4":
 			driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Namma Yatri Partner']")).click();
 			Thread.sleep(4000);
 			driver.findElement(AppiumBy.xpath("//android.widget.ImageButton[@content-desc='Navigate up']")).click();
@@ -118,11 +135,18 @@ public class DevicePermission extends BaseClass {
 			Thread.sleep(2000);
 			driver.findElement(AppiumBy.xpath("//android.widget.ImageView[@content-desc='Back']")).click();
 			break;
+		case "eb23ba":
+			driver.findElement(new AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0))"
+					+ ".scrollIntoView(new UiSelector()" + ".textMatches(\"" +driverApp+ "\").instance(0))"));
+			driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Namma Yatri Partner']/../../android.widget.ImageView")).click();
+			driver.findElement(AppiumBy.xpath("//android.widget.Switch[@resource-id='android:id/switch_widget']")).click();
+			driver.findElement(AppiumBy.xpath("//android.widget.ImageView[@content-desc='Back']")).click();
+			break;
 		default: 
 			break;
 		}
-		}
-	
+	}
+
 	private void batteryOptimizationPopUp() throws InterruptedException{
 		switch(driverUdid) {
 		case "1371785921000CT":
@@ -138,14 +162,18 @@ public class DevicePermission extends BaseClass {
 		case "RFCT42T5N9D":
 		case "R9ZTB0KD0FA":
 		case "RZ8R72RE6AB":
-		case "28301JEGR03129" :
+		case "28301JEGR03129":
 			driver.findElement(AppiumBy.xpath("//android.widget.Button[@text='Allow']")).click();
 			break;
+		case "eb23ba":
+			driver.findElement(AppiumBy.xpath("//android.widget.CheckedTextView[@text='No restrictions']")).click();
+		//	driver.findElement(AppiumBy.xpath("//android.widget.ImageView[@content-desc='Back']")).click();
+			break;
 		default:
-		    break;
+			break;
 		}
 	}
-	
+
 	private void notificationAccessPopUp() {
 		switch(driverUdid) {
 		case "1371785921000CT":
@@ -161,21 +189,31 @@ public class DevicePermission extends BaseClass {
 			driver.findElement(AppiumBy.xpath("//android.widget.Button[@text='Allow']")).click();
 			break;
 		default:
-		    break;
-			
+			break;
+
 		}
 	}
 	private void autoStartPermission() {
-		if ("062c68090409".contains(driverUdid)) {
-
+		
+		switch(driverUdid) {
+		case "062c68090409":
 			driver.findElement(new AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0))"
 					+ ".scrollIntoView(new UiSelector()" + ".textMatches(\"" +driverApp+ "\").instance(0))"));
 			driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Namma Yatri Partner']/../../android.widget.CheckBox")).click();
-			driver.findElement(AppiumBy.xpath("//android.widget.FrameLayout[@content-desc=\"Back\"]/android.widget.ImageView")).click();
-		}
-		else {
-			System.out.println("No action required.");
+						driver.findElement(AppiumBy.xpath("//android.widget.FrameLayout[@content-desc='Back']/android.widget.ImageView")).click();
+			break;
+		case "eb23ba":
+			driver.findElement(new AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0))"
+					+ ".scrollIntoView(new UiSelector()" + ".textMatches(\"" +driverApp+ "\").instance(0))"));
+			driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Namma Yatri Partner']/../../android.widget.CheckBox")).click();
+						driver.findElement(AppiumBy.xpath("//android.widget.FrameLayout[@content-desc='Back']/android.widget.ImageView")).click();
+			//need to add one more back x-path
+			
+			break;
+		default:
+			break;
 		}
 		
+
 	}
 }

@@ -27,7 +27,7 @@ public class DevicePermission extends BaseClass {
 	public void locationPermissionsConfirmation() {
 
 
-		if(Arrays.asList("15913008960024W", "1377682723004YR", "1371785921000CT",  "9618349153000CS").contains(userUdid))
+		if(Arrays.asList("15913008960024W", "1377682723004YR", "1371785921000CT",  "9618349153000CS", "eb23ba").contains(userUdid))
 		{
 			driver1.findElement(AppiumBy.xpath("//android.widget.Button[@text='WHILE USING THE APP']")).click();
 
@@ -49,7 +49,7 @@ public class DevicePermission extends BaseClass {
 	}
 
 	public void notification() {
-		if(Arrays.asList("1371785921000CT", "15913008960024W", "9618349153000CS").contains(userUdid))
+		if(Arrays.asList("1371785921000CT", "15913008960024W", "9618349153000CS", "eb23ba").contains(userUdid))
 		{
 
 			driver1.findElement(AppiumBy.xpath("//android.widget.Button[@text='ALLOW']")).click();

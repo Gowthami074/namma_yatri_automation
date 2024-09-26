@@ -21,7 +21,7 @@ public class UserLoginFlow extends BaseClass{
 		Thread.sleep(2000);	
 		devicePermission.autoSuggestionDecline();
 		Thread.sleep(1000);
-		driver1.findElement(AppiumBy.xpath("//android.widget.EditText[@text='Enter Mobile number']")).sendKeys("9491839588");
+		driver1.findElement(AppiumBy.xpath("//android.widget.EditText[@text='Enter Mobile number']")).sendKeys("9972499680");
 		Thread.sleep(2000);
 		driver1.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Continue']")).click();
 		Thread.sleep(2000);    
