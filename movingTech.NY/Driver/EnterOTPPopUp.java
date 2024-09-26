@@ -18,14 +18,12 @@ public class EnterOTPPopUp extends BaseClass {
 	public void enterCorrectOTP() throws InterruptedException {
 		
 		System.out.println("Ride OTP is transferred to Driver to Start Ride = "+rideOTP);
-
-//        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Start Ride']")).click();
         Thread.sleep(3000);
     	driver.findElement(AppiumBy.xpath("//android.widget.EditText")).sendKeys(rideOTP);
 		System.out.println("Driver entered the right otp");
 		Thread.sleep(3000);
 	} 
-	
+	 
 	public void clickBackAfterEnteringOTP() {
 		
 		

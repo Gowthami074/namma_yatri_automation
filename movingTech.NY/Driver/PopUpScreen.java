@@ -28,9 +28,9 @@ public class PopUpScreen extends BaseClass {
         WebElement acceptButton = driver.findElement(AppiumBy.xpath("//android.widget.Button[@text='Accept Offer']"));
         acceptButton.click();
         System.out.println("Driver accepted the ride request");
-        Thread.sleep(7000);
+        Thread.sleep(3000);
     }
-
+ 
     // Method to decline the ride offer (placeholder, not implemented)
     public void declineOffer() {
         // To be implemented
