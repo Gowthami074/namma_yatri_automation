@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
@@ -62,10 +63,10 @@ public class BaseClass {
 				cap.setCapability("udid", driverUdid);
 				cap.setCapability("automationName", "UiAutomator2");
 				cap.setCapability("newCommandTimeout", 300);
-				cap.setCapability("app", "/Users/gowthami.allu/Documents/NammaYatriAutomation/movingTech.NY/Resources/driver-2-sept-master.apk");
+				cap.setCapability("app", "/Users/sumedh.kp/eclipse-workspace/NammaYatriAutomation/movingTech.NY/Resources/app-nyDriver-prod-debug.apk");
 				driver = new AndroidDriver(url, cap);
 
-				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+				implicitWaitMethod(driver,60);
 				System.out.println("Launched the Driver Application");
 			}
 
@@ -78,9 +79,9 @@ public class BaseClass {
 				cap1.setCapability("udid", userUdid);
 				cap1.setCapability("automationName", "UiAutomator2");
 				cap1.setCapability("newCommandTimeout", 300);
-				cap1.setCapability("app", "/Users/gowthami.allu/Documents/NammaYatriAutomation/movingTech.NY/Resources/user-2-sept-master.apk");
+				cap1.setCapability("app", "/Users/sumedh.kp/Desktop/Appium Automation/user-2-sept-master.apk");
 				driver1 = new AppiumDriver(url, cap1);
-				driver1.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+				implicitWaitMethod(driver1,60);
 				System.out.println("Launched the User Application");
 			}
 		} catch (Exception exp) {
@@ -95,7 +96,8 @@ public class BaseClass {
 		List<String> udids = new ArrayList<>();
 		try {
 
-			ProcessBuilder processBuilder = new ProcessBuilder("/usr/local/bin/adb", "devices", "-l");   
+			ProcessBuilder processBuilder = new ProcessBuilder("/Users/sumedh.kp/Library/Android/sdk/platform-tools/adb", "devices", "-l");   
+		//	/usr/local/bin/adb
 			//          System.out.println(System.getenv("PATH"));
 			Process process = processBuilder.start();
 			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
@@ -116,7 +118,10 @@ public class BaseClass {
 		}
 		return udids;
 	}    
-
+ 
+	public void implicitWaitMethod(Object obj,int durationInSeconds) {
+		((RemoteWebDriver) obj).manage().timeouts().implicitlyWait(durationInSeconds, TimeUnit.SECONDS);
+	}
 
 	@AfterSuite
 	public void tearDown() {
