@@ -9,13 +9,15 @@ public class RideSearch extends BaseClass{
     @Test	
 	public void SearchForRideFromSuggestion() throws InterruptedException {
 		System.out.println("Ride Search about to start");
+		driver1.findElement(AppiumBy.xpath("//android.widget.Button[@text='ALLOW']")).click(); 
 		Thread.sleep(3000);
 //		driver1.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Where to?']")).click();
 		driver1.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Where are you going?']")).click();
 		Thread.sleep(2000);
 		// this is notification we are getting only in vivo device, If we are not getting in other devices we can comment this x-path
-//		driver1.findElement(AppiumBy.xpath("//android.widget.Button[@text='ALLOW']")).click();
-		
+//		if("15913008960024W".contains(userUdid)) {
+//			driver1.findElement(AppiumBy.xpath("//android.widget.Button[@text='ALLOW']")).click(); 
+//		}
 		driver1.findElement(AppiumBy.xpath("//android.widget.EditText[@text='Where to?']")).sendKeys("Koram");
 		Thread.sleep(2000);
 		driver1.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Koramangala']")).click();
