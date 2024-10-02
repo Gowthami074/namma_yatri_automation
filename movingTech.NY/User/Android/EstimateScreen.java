@@ -55,7 +55,6 @@ public class EstimateScreen extends BaseClass {
 		driver.navigate().back();
 		driver.navigate().back();
 		driver.navigate().back();
-
 		Thread.sleep(2000);
 		System.out.println("Coming to tap selected estimate");
 	}
