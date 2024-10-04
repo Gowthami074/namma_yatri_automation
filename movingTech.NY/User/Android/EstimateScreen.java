@@ -56,12 +56,11 @@ public class EstimateScreen extends BaseClass {
         implicitWaitMethod(driver1,5); //This method is defined in BaseClass
         WebDriverWait wait = new WebDriverWait(driver1, Duration.ofSeconds(5)); // Set a small explicit wait time
         try {
-
-   		 wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.xpath("//android.widget.LinearLayout[@content-desc='Inside Book Any : " + vehicleVariantText + " Checkbox : selected ']")));
-   			 System.out.println(vehicleVariantText +"Variant already selected");
+         wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.xpath("//android.widget.LinearLayout[@content-desc='Inside Book Any : " + vehicleVariantText + " Checkbox : selected ']")));
+             System.out.println(vehicleVariantText +"Variant already selected");
             
         } catch (Exception e3) {
-        	 System.out.println(vehicleVariantText +"Variant Unselected");
+             System.out.println(vehicleVariantText +"Variant Unselected");
                           WebElement elementUnSelectedElement = wait.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.xpath("//android.widget.LinearLayout[@content-desc='Inside Book Any : " + vehicleVariantText + " Checkbox : Un Selected']")));
                           System.out.println(vehicleVariantText +"Variant selected Now");
                 elementUnSelectedElement.click();
