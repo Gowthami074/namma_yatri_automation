@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="User Cancellation">
+    <parameter name="flowOption" value="3"></parameter>
+      <suite-files>
+        <suite-file path="../nammaYatriCommonRideSearchFlow/nammaYatriCommonRideSearchFlow.xml"/>
+    </suite-files>
+    
+   <!-- UserCancellation-->
+   <test name="UserCancellation">
+	   <classes>
+		   <class name="User.Android.UserCancellation">
+		   <methods>
+			   <include name= "userCancellation"/>   
+		   </methods>
+		    </class>
+	   </classes>	     
+   </test>
+   </suite>
+   
+   
