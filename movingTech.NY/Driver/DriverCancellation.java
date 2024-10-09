@@ -5,6 +5,7 @@ import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Point;
@@ -13,6 +14,7 @@ import com.google.common.collect.ImmutableMap;
 
 public class DriverCancellation extends BaseClass {
 
+	@Test
     public void cancelRide() throws InterruptedException {
         System.out.println("Driver cancel about to start");
         

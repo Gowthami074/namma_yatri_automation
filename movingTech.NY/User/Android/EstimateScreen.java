@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 public class EstimateScreen extends BaseClass {
-    String vehicleVariantText;
+//    String vehicleVariantText;
     @Test
     public void autoAssignDriver() throws InterruptedException {
         Thread.sleep(7000);
@@ -34,14 +34,8 @@ public class EstimateScreen extends BaseClass {
         return driver1.findElements(AppiumBy.xpath("//android.widget.TextView[@text='Book Any']")).size() > 0;
     }   
     private void getVehicleVariantFromDriverProfile() throws InterruptedException {
-        // Get the vehicle variant text from DriverProfileScreen
-        DriverprofileScreen driverProfile = new DriverprofileScreen();
-        vehicleVariantText = driverProfile.getDriverVehicleVariant();
-        driver.navigate().back();
-        driver.navigate().back();
-        driver.navigate().back();
-        Thread.sleep(2000);
-        System.out.println("Coming to tap selected estimate");
+    	 DriverprofileScreen driverProfile = new DriverprofileScreen();
+    	 driverProfile.getDriverVehicleVariant();
     }
     private void tapFinalXpath() {
         // Tapping on the final XPath element
@@ -57,12 +51,12 @@ public class EstimateScreen extends BaseClass {
         WebDriverWait wait = new WebDriverWait(driver1, Duration.ofSeconds(5)); // Set a small explicit wait time
         try {
          wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.xpath("//android.widget.LinearLayout[@content-desc='Inside Book Any : " + vehicleVariantText + " Checkbox : selected ']")));
-             System.out.println(vehicleVariantText +"Variant already selected");
+             System.out.println(vehicleVariantText +" Variant already selected");
             
         } catch (Exception e3) {
-             System.out.println(vehicleVariantText +"Variant Unselected");
+             System.out.println(vehicleVariantText +" Variant Unselected");
                           WebElement elementUnSelectedElement = wait.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.xpath("//android.widget.LinearLayout[@content-desc='Inside Book Any : " + vehicleVariantText + " Checkbox : Un Selected']")));
-                          System.out.println(vehicleVariantText +"Variant selected Now");
+                          System.out.println(vehicleVariantText +" Variant selected Now");
                 elementUnSelectedElement.click();
         }
         implicitWaitMethod(driver1,60);
